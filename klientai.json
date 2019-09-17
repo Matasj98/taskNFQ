@@ -1,11 +1,36 @@
 [
     {
-        "name" : "Petras"
+        "specialistas": "Kardiologas",
+        "klientai": [
+            {
+                "nr":2,
+                "name" : "Petras"
+            },
+            {   
+                "nr": 1,
+                "name" : "Jonas"
+            },
+            {
+                "nr": 3,
+                "name" : "Alvydas"
+            }
+        ]
     },
     {
-        "name" : "Jonas"
-    },
-    {
-        "name" : "Alvydas"
+        "specialistas":"Šeimos gydytojas",
+        "klientai":[
+            {
+                "nr":3,
+                "name" : "Gabija"
+            },
+            {   
+                "nr": 1,
+                "name" : "Živilė"
+            },
+            {
+                "nr": 2,
+                "name" : "Urtė"
+            }
+        ]
     }
 ]

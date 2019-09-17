@@ -5,11 +5,13 @@ const inputStorage = document.getElementById("saveDataInLocalStorage");
 
 let obj;
 
+//išsaugoma localStorage
 const saveToLocalStorage = () =>{
     window.localStorage.setItem('users', JSON.stringify(obj));
 }
 
-function createListElement() {
+//atvaiduojamas prideto kliento vardas
+const createListElement = () => {
 	let li = document.createElement("li");
 	li.appendChild(document.createTextNode(input.value));
     ul.appendChild(li);
@@ -17,6 +19,13 @@ function createListElement() {
 	input.value = "";
 }
 
+// funkcija tikrina ar laukas nera tuščias ir ar event = 13 (13 - ENTER paspaudimas)
+const addListAfterKeypress = (event) => {
+	if (input.value.length > 0 && event.keyCode === 13) {
+		createListElement();
+	}
+}
+//paimami duomenys is klientai.json failo ir prilyginami kintamajui "obj"
 const takeDataFromJson = () =>{
     fetch("./klientai.json")
     .then(resp=> resp.json())
@@ -25,10 +34,10 @@ const takeDataFromJson = () =>{
     });
 }
 
+//pats pirmas veiksmas. iskvieciama funkcija, kad iškart nuskaitytu duomenis.
 takeDataFromJson();
 
-console.log(obj)
-
 saveList.addEventListener("click", createListElement);
+input.addEventListener("keypress", addListAfterKeypress);
 inputStorage.addEventListener("click", saveToLocalStorage);
 
