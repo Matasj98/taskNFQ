@@ -1,4 +1,4 @@
-const ul = document.querySelector("ul");
+const ul = document.querySelector("#list");
 const saveList = document.getElementById("userButton");
 const input = document.getElementById("userInput");
 const inputStorage = document.getElementById("saveDataInLocalStorage");
