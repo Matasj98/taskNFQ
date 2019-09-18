@@ -6,6 +6,6 @@
     flex-direction: column;
 }
 
-input, button{
+input, button,span{
     margin: 10px;
 }

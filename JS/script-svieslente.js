@@ -10,9 +10,11 @@ obj.map(data => {
     h1.appendChild(document.createTextNode(data.specialistas))
     ul.appendChild(h1)
     sort.map(klientas => {
-        let li = document.createElement("li")
-        li.appendChild(document.createTextNode("Numeris eilėje: "+klientas.nr+ ". Vardas: " + klientas.name))
-        ul.appendChild(li)
+        if(klientas.status === false){
+            let li = document.createElement("li")
+            li.appendChild(document.createTextNode("Numeris eilėje: "+klientas.nr+ ". Vardas: " + klientas.name))
+            ul.appendChild(li)
+        }
     })
 })
 

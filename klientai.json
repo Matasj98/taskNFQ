@@ -4,15 +4,18 @@
         "klientai": [
             {
                 "nr":2,
-                "name" : "Petras"
+                "name" : "Petras",
+                "status" : false
             },
             {   
                 "nr": 1,
-                "name" : "Jonas"
+                "name" : "Jonas",
+                "status" : false
             },
             {
                 "nr": 3,
-                "name" : "Alvydas"
+                "name" : "Alvydas",
+                "status" : false
             }
         ]
     },
@@ -21,15 +24,18 @@
         "klientai":[
             {
                 "nr":3,
-                "name" : "Gabija"
+                "name" : "Gabija",
+                "status" : false
             },
             {   
                 "nr": 1,
-                "name" : "Živilė"
+                "name" : "Živilė",
+                "status" : false
             },
             {
                 "nr": 2,
-                "name" : "Urtė"
+                "name" : "Urtė",
+                "status" : false
             }
         ]
     }
