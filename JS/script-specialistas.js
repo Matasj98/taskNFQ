@@ -5,6 +5,7 @@ const obj = JSON.parse(window.localStorage.getItem('users'));
 obj.map(data => {
     let sort = data.klientai
     sort.sort((a, b) => a.nr - b.nr)
+    sort.sort((a,b)=> a.status - b.status)
     let h1 = document.createElement("h1")
     h1.appendChild(document.createTextNode(data.specialistas))
     ul.appendChild(h1)
