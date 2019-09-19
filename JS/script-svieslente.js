@@ -10,7 +10,7 @@ obj.map(data => {
     ul.appendChild(h1)
     data.klientai.filter(klientas => klientas.nr > 0).filter(klientas => klientas.nr < 4).map(klientas => {
         let li = document.createElement("li")
-            li.appendChild(document.createTextNode("Numeris eilėje: "+klientas.nr+ ". Vardas: " + klientas.name))
+            li.appendChild(document.createTextNode("Numeris eilėje: "+klientas.nr+ ". Vardas: " + klientas.name + ". Kliento numeris: " + klientas.uniqueNr))
             if(klientas.nr === 1){
                 li.setAttribute("class", "pirmas")
             }

@@ -15,9 +15,6 @@ const saveToLocalStorage = () =>{
 
 //atvaiduojamas prideto kliento vardas
 const createListElement = () => {
-	let li = document.createElement("li");
-	li.appendChild(document.createTextNode(input.value));
-    ul.appendChild(li);
 
     let big_nr = 0;
 
@@ -34,9 +31,14 @@ const createListElement = () => {
 
     obj.map(data => {
         if(data.specialistas === specialistas.value){
-            data.klientai.push({"nr": big_nr+1, "name": input.value, "status":false});
+            data.klientai.push({"nr": big_nr+1, "uniqueNr":big_nr, "name": input.value, "status":false});
         }
     })
+
+    let li = document.createElement("li");
+	li.appendChild(document.createTextNode("Vardas " + input.value + ". Kliento numeris: "+(big_nr+1)));
+    ul.appendChild(li);
+
     big_nr=0;
 	input.value = "";
 }
