@@ -3,8 +3,23 @@ const filter = document.querySelectorAll("input")
 
 const obj = JSON.parse(window.localStorage.getItem('users'));
 
+let start = new Date();
+let end;
+
+const trackTime = () =>{
+    end = new Date() - start;
+    start = new Date();
+
+    var seconds = Math.round(end / 1000);
+    var minutes = Math.round(seconds / 60);
+    var hours = Math.round(minutes / 60);
+
+    end = `${hours}h ${minutes}min ${seconds}sec`;
+}
+
 const printSpecialistas = (value) =>{
-    ul.innerHTML = ""
+
+    ul.innerHTML = "";
     obj.map(data => {
         
         let sort = data.klientai
@@ -18,10 +33,12 @@ const printSpecialistas = (value) =>{
                 let li = document.createElement("li")
                 li.appendChild(document.createTextNode("Numeris eilėje: "+klientas.nr+ ". Vardas: " + klientas.name))
                 ul.appendChild(li)
-        
+
                 const aptarnavimas = (evt) =>{
+                    trackTime();
+
                     let span = document.createElement("span")
-                    span.appendChild(document.createTextNode("Aptarnautas"))
+                    span.appendChild(document.createTextNode("Aptarnautas per " + end))
                     evt.target.parentElement.appendChild(span)
                 
                     evt.target.remove();
@@ -48,7 +65,7 @@ const printSpecialistas = (value) =>{
                     let button = document.createElement("button");
                     button.appendChild(document.createTextNode("Aptarnauti"));
                     li.appendChild(button);
-        
+                    
                     button.onclick = aptarnavimas;
                 }else{
                     let span = document.createElement("span");
