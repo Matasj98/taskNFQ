@@ -38,7 +38,6 @@ const createListElement = () => {
         }
     })
     big_nr=0;
-    // obj.push({"name": input.value});
 	input.value = "";
 }
 

@@ -11,6 +11,9 @@ obj.map(data => {
     data.klientai.filter(klientas => klientas.nr > 0).filter(klientas => klientas.nr < 4).map(klientas => {
         let li = document.createElement("li")
             li.appendChild(document.createTextNode("Numeris eilėje: "+klientas.nr+ ". Vardas: " + klientas.name))
+            if(klientas.nr === 1){
+                li.setAttribute("class", "pirmas")
+            }
             ul.appendChild(li)
     })
 })
