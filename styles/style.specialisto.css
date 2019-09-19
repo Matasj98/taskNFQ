@@ -1,5 +1,29 @@
+body{
+    background-color: bisque;
+}
+
+.choice{
+    margin: 0 15vw;
+}
+
+#container{
+    display:flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#list{
+    list-style-type: none;
+    /* text-align: right; */
+}
+
 #list span, button{
     margin: 0 10px;
+}
+
+#list li{
+    display:flex;
+    justify-content: space-between;
 }
 
 #list span{

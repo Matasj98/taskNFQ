@@ -8,7 +8,7 @@ obj.map(data => {
     let h1 = document.createElement("h1")
     h1.appendChild(document.createTextNode(data.specialistas))
     ul.appendChild(h1)
-    data.klientai.filter(klientas => klientas.nr > 0).map(klientas => {
+    data.klientai.filter(klientas => klientas.nr > 0).filter(klientas => klientas.nr < 4).map(klientas => {
         let li = document.createElement("li")
             li.appendChild(document.createTextNode("Numeris eilėje: "+klientas.nr+ ". Vardas: " + klientas.name))
             ul.appendChild(li)

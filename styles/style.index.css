@@ -1,3 +1,7 @@
+body{
+    background-color: bisque;
+}
+
 #sarasas{
     height: 90vh;
     display: flex;
