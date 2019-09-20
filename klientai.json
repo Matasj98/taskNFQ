@@ -6,19 +6,22 @@
                 "nr":2,
                 "uniqueNr": 2,
                 "name" : "Petras",
-                "status" : false
+                "status" : false,
+                "time": ""
             },
             {   
                 "nr": 1,
                 "uniqueNr": 1,
                 "name" : "Jonas",
-                "status" : false
+                "status" : false,
+                "time": ""
             },
             {
                 "nr": 3,
                 "uniqueNr": 3,
                 "name" : "Alvydas",
-                "status" : false
+                "status" : false,
+                "time": ""
             }
         ]
     },
@@ -29,37 +32,43 @@
                 "nr":3,
                 "uniqueNr": 3,
                 "name" : "Gabija",
-                "status" : false
+                "status" : false,
+                "time": ""
             },
             {   
                 "nr": 1,
                 "uniqueNr": 1,
                 "name" : "Živilė",
-                "status" : false
+                "status" : false,
+                "time": ""
             },
             {
                 "nr": 2,
                 "uniqueNr": 2,
                 "name" : "Urtė",
-                "status" : false
+                "status" : false,
+                "time": ""
             },
             {
                 "nr": 5,
                 "uniqueNr": 5,
                 "name" : "Violeta",
-                "status" : false
+                "status" : false,
+                "time": ""
             },
             {
                 "nr": 4,
                 "uniqueNr": 4,
                 "name" : "Gintaras",
-                "status" : false
+                "status" : false,
+                "time": ""
             },
             {
                 "nr": 6,
                 "uniqueNr": 6,
                 "name" : "Matas",
-                "status" : false
+                "status" : false,
+                "time": ""
             }
         ]
     },
@@ -70,19 +79,22 @@
                 "nr":2,
                 "uniqueNr": 2,
                 "name" : "Izabela",
-                "status" : false
+                "status" : false,
+                "time": ""
             },
             {   
                 "nr": 1,
                 "uniqueNr": 1,
                 "name" : "Eligijus",
-                "status" : false
+                "status" : false,
+                "time": ""
             },
             {
                 "nr": 3,
                 "uniqueNr": 3,
                 "name" : "Tautvydas",
-                "status" : false
+                "status" : false,
+                "time": ""
             }
         ]
     }

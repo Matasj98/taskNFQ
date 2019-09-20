@@ -6,7 +6,7 @@ const obj = JSON.parse(window.localStorage.getItem('users'));
 let start = new Date();
 let end;
 
-const trackTime = () =>{
+const trackTime = (nr, specialistas) =>{
     end = new Date() - start;
     start = new Date();
 
@@ -14,7 +14,7 @@ const trackTime = () =>{
     var minutes = Math.round(seconds / 60);
     var hours = Math.round(minutes / 60);
 
-    end = `${hours}h ${minutes}min ${seconds}sec`;
+    return end = `${hours}h ${minutes}min ${seconds}sec`;
 }
 
 const printSpecialistas = (value) =>{
@@ -35,10 +35,10 @@ const printSpecialistas = (value) =>{
                 ul.appendChild(li)
 
                 const aptarnavimas = (evt) =>{
-                    trackTime();
+                    klientas.time = trackTime();
 
                     let span = document.createElement("span")
-                    span.appendChild(document.createTextNode("Aptarnautas per " + end))
+                    span.appendChild(document.createTextNode("Aptarnautas per " + klientas.time))
                     evt.target.parentElement.appendChild(span)
                 
                     evt.target.remove();
@@ -69,7 +69,7 @@ const printSpecialistas = (value) =>{
                     button.onclick = aptarnavimas;
                 }else{
                     let span = document.createElement("span");
-                    span.appendChild(document.createTextNode("Aptarnautas"));
+                    span.appendChild(document.createTextNode("Aptarnautas per " + klientas.time));
                     li.appendChild(span);
                 }
         
