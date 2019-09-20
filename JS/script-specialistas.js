@@ -6,12 +6,15 @@ const obj = JSON.parse(window.localStorage.getItem('users'));
 let start = new Date();
 let end;
 
-const trackTime = (nr, specialistas) =>{
+
+const trackTime = () =>{
     end = new Date() - start;
+    window.localStorage.setItem('time', end);
     start = new Date();
 
     var seconds = Math.round(end / 1000);
     var minutes = Math.round(seconds / 60);
+    seconds > 60 ? seconds -= 60 : null 
     var hours = Math.round(minutes / 60);
 
     return end = `${hours}h ${minutes}min ${seconds}sec`;

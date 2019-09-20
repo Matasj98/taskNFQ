@@ -31,7 +31,7 @@ const createListElement = () => {
 
     obj.map(data => {
         if(data.specialistas === specialistas.value){
-            data.klientai.push({"nr": big_nr+1, "uniqueNr":big_nr, "name": input.value, "status":false, "time":""});
+            data.klientai.push({"nr": big_nr+1, "uniqueNr":big_nr+1, "name": input.value, "status":false, "time":""});
         }
     })
 
