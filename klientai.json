@@ -7,21 +7,21 @@
                 "uniqueNr": 2,
                 "name" : "Petras",
                 "status" : false,
-                "time": ""
+                "time": 0
             },
             {   
                 "nr": 1,
                 "uniqueNr": 1,
                 "name" : "Jonas",
                 "status" : false,
-                "time": ""
+                "time": 0
             },
             {
                 "nr": 3,
                 "uniqueNr": 3,
                 "name" : "Alvydas",
                 "status" : false,
-                "time": ""
+                "time": 0
             }
         ]
     },
@@ -33,42 +33,42 @@
                 "uniqueNr": 3,
                 "name" : "Gabija",
                 "status" : false,
-                "time": ""
+                "time": 0
             },
             {   
                 "nr": 1,
                 "uniqueNr": 1,
                 "name" : "Živilė",
                 "status" : false,
-                "time": ""
+                "time": 0
             },
             {
                 "nr": 2,
                 "uniqueNr": 2,
                 "name" : "Urtė",
                 "status" : false,
-                "time": ""
+                "time": 0
             },
             {
                 "nr": 5,
                 "uniqueNr": 5,
                 "name" : "Violeta",
                 "status" : false,
-                "time": ""
+                "time": 0
             },
             {
                 "nr": 4,
                 "uniqueNr": 4,
                 "name" : "Gintaras",
                 "status" : false,
-                "time": ""
+                "time": 0
             },
             {
                 "nr": 6,
                 "uniqueNr": 6,
                 "name" : "Matas",
                 "status" : false,
-                "time": ""
+                "time": 0
             }
         ]
     },
@@ -80,21 +80,21 @@
                 "uniqueNr": 2,
                 "name" : "Izabela",
                 "status" : false,
-                "time": ""
+                "time": 0
             },
             {   
                 "nr": 1,
                 "uniqueNr": 1,
                 "name" : "Eligijus",
                 "status" : false,
-                "time": ""
+                "time": 0
             },
             {
                 "nr": 3,
                 "uniqueNr": 3,
                 "name" : "Tautvydas",
                 "status" : false,
-                "time": ""
+                "time": 0
             }
         ]
     }

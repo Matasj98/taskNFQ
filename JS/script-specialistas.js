@@ -9,12 +9,19 @@ const trackTime = () =>{
     let end = start - oldTime;
     window.localStorage.setItem('time', new Date())
 
-    var seconds = Math.round(end / 1000);
+    return end
+}
+
+const calculateTime = (time) =>{
+
+    var seconds = Math.round(time / 1000);
     var minutes = Math.round(seconds / 60);
-    seconds > 60 ? seconds -= 60 : null 
+    while(seconds > 60){
+        seconds -= 60;
+    }
     var hours = Math.round(minutes / 60);
 
-    return end = `${hours}h ${minutes}min ${seconds}sec`;
+    return `${hours}h ${minutes}min ${seconds}sec`;
 }
 
 const printSpecialistas = (value) =>{
@@ -36,9 +43,10 @@ const printSpecialistas = (value) =>{
 
                 const aptarnavimas = (evt) =>{
                     klientas.time = trackTime();
+                    let time = calculateTime(klientas.time);
 
                     let span = document.createElement("span")
-                    span.appendChild(document.createTextNode("Aptarnautas per " + klientas.time))
+                    span.appendChild(document.createTextNode("Aptarnautas per " + time))
                     evt.target.parentElement.appendChild(span)
                 
                     evt.target.remove();
@@ -69,12 +77,12 @@ const printSpecialistas = (value) =>{
                     button.onclick = aptarnavimas;
                 }else{
                     let span = document.createElement("span");
-                    span.appendChild(document.createTextNode("Aptarnautas per " + klientas.time));
+                    span.appendChild(document.createTextNode("Aptarnautas per " + calculateTime(klientas.time)));
                     li.appendChild(span);
                 }
         
             })
-    }
+        }
         
     })
 }
