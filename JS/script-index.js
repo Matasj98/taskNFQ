@@ -11,6 +11,8 @@ let obj;
 //išsaugoma localStorage
 const saveToLocalStorage = () =>{
     window.localStorage.setItem('users', JSON.stringify(obj));
+    
+    window.localStorage.setItem('time', new Date())
 }
 
 //atvaiduojamas prideto kliento vardas
@@ -41,8 +43,6 @@ const createListElement = () => {
 
     big_nr=0;
     input.value = "";
-    
-    window.localStorage.setItem('time', new Date())
 }
 
 // funkcija tikrina ar laukas nera tuščias ir ar event = 13 (13 - ENTER paspaudimas)

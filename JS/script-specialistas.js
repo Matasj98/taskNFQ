@@ -12,16 +12,16 @@ const trackTime = () =>{
     return end
 }
 
-const calculateTime = (time) =>{
+String.prototype.toHHMMSS = function () {
+    var sec_num = parseInt(this, 10);
+    var hours   = Math.floor(sec_num / 3600);
+    var minutes = Math.floor((sec_num - (hours * 3600)) / 60);
+    var seconds = sec_num - (hours * 3600) - (minutes * 60);
 
-    var seconds = Math.round(time / 1000);
-    var minutes = Math.round(seconds / 60);
-    while(seconds > 60){
-        seconds -= 60;
-    }
-    var hours = Math.round(minutes / 60);
-
-    return `${hours}h ${minutes}min ${seconds}sec`;
+    if (hours   < 10) {hours   = "0"+hours;}
+    if (minutes < 10) {minutes = "0"+minutes;}
+    if (seconds < 10) {seconds = "0"+seconds;}
+    return hours + ':' + minutes + ':' + seconds;
 }
 
 const printSpecialistas = (value) =>{
@@ -37,13 +37,14 @@ const printSpecialistas = (value) =>{
             h1.appendChild(document.createTextNode(data.specialistas))
             ul.appendChild(h1)
             sort.map(klientas => {
+            
                 let li = document.createElement("li")
                 li.appendChild(document.createTextNode("Numeris eilėje: "+klientas.nr+ ". Vardas: " + klientas.name))
                 ul.appendChild(li)
 
                 const aptarnavimas = (evt) =>{
                     klientas.time = trackTime();
-                    let time = calculateTime(klientas.time);
+                    let time = JSON.stringify(klientas.time/1000).toHHMMSS()
 
                     let span = document.createElement("span")
                     span.appendChild(document.createTextNode("Aptarnautas per " + time))
@@ -77,7 +78,7 @@ const printSpecialistas = (value) =>{
                     button.onclick = aptarnavimas;
                 }else{
                     let span = document.createElement("span");
-                    span.appendChild(document.createTextNode("Aptarnautas per " + calculateTime(klientas.time)));
+                    span.appendChild(document.createTextNode("Aptarnautas per " + (JSON.stringify(klientas.time/1000).toHHMMSS())));
                     li.appendChild(span);
                 }
         
