@@ -29,7 +29,7 @@ const search = () =>{
 
     obj.map(data =>{
         data.klientai.map(klientas =>{
-            if(klientas.time > 0){
+            if(klientas.time > 0 && data.specialistas === specialistas.value){
                 count++;
                 time += klientas.time;
             }
@@ -42,7 +42,7 @@ const search = () =>{
     if(klientoNrCheck === "-"){
         print.innerHTML = "Klientas aptarnautas."
     }else if(answer != ""){
-        print.innerHTML = answer + `Kiek liko laukti: ${calculateTime(time/count)}`
+        print.innerHTML = answer + `Kiek liko laukti: ~${calculateTime(time/count)}`
     }else{
         print.innerHTML = "Klientas nerastas. Patikslinkite įvestus duomenis."
     }
