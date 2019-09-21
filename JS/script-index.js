@@ -3,7 +3,7 @@ const saveList = document.getElementById("userButton");
 const input = document.getElementById("userInput");
 const inputStorage = document.getElementById("saveDataInLocalStorage");
 const specialistas = document.querySelector("select");
-// let specialistasValue = specialistas.value;
+const alert = document.querySelector(".alert");
 
 let obj;
 
@@ -13,6 +13,8 @@ const saveToLocalStorage = () =>{
     window.localStorage.setItem('users', JSON.stringify(obj));
     
     window.localStorage.setItem('time', new Date())
+
+    alert.innerHTML = "Užregistruoti klientai sėkmingai išsaugoti localStorage"
 }
 
 //atvaiduojamas prideto kliento vardas
@@ -41,6 +43,8 @@ const createListElement = () => {
 	li.appendChild(document.createTextNode("Vardas " + input.value + ". Kliento numeris: "+(big_nr+1)));
     ul.appendChild(li);
 
+    alert.innerHTML = "Klientas užregistruotas sėkmingai <br> Išsaugokite duomenis į localStorage"
+
     big_nr=0;
     input.value = "";
 }
@@ -63,7 +67,7 @@ const takeDataFromJson = () =>{
     .then(resp=> resp.json())
     .then(data => {
         obj = data
-    });
+    }).catch(() => alert.innerHTML = "Nepavyko nuskaityti klientų duomenų");
 }
 
 //pats pirmas veiksmas. iskvieciama funkcija, kad iškart nuskaitytu duomenis.
