@@ -40,7 +40,9 @@ const createListElement = () => {
     ul.appendChild(li);
 
     big_nr=0;
-	input.value = "";
+    input.value = "";
+    
+    window.localStorage.setItem('time', new Date())
 }
 
 // funkcija tikrina ar laukas nera tuščias ir ar event = 13 (13 - ENTER paspaudimas)

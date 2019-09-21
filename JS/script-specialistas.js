@@ -3,14 +3,15 @@ const filter = document.querySelectorAll("input")
 
 const obj = JSON.parse(window.localStorage.getItem('users'));
 
-let start = new Date();
-let end;
+// let start = new Date();
+
 
 
 const trackTime = () =>{
-    end = new Date() - start;
-    window.localStorage.setItem('time', end);
-    start = new Date();
+    let start = new Date();
+    let oldTime = new Date(window.localStorage.getItem('time'))
+    let end = start - oldTime;
+    window.localStorage.setItem('time', new Date())
 
     var seconds = Math.round(end / 1000);
     var minutes = Math.round(seconds / 60);
