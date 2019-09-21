@@ -1,0 +1,20 @@
+body{
+    background-color: bisque;
+}
+
+.container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.search{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+select, button, input{
+    margin: 10px;
+}

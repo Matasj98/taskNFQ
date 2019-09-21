@@ -3,10 +3,6 @@ const filter = document.querySelectorAll("input")
 
 const obj = JSON.parse(window.localStorage.getItem('users'));
 
-// let start = new Date();
-
-
-
 const trackTime = () =>{
     let start = new Date();
     let oldTime = new Date(window.localStorage.getItem('time'))

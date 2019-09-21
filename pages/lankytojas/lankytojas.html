@@ -4,6 +4,7 @@
     <head>
         <title></title>
         <link rel="stylesheet" href="../../styles/style.navBar.css">
+        <link rel="stylesheet" href="../../styles/style.lankytojas.css">
     </head>
     <body>
         <nav>
@@ -23,15 +24,17 @@
             </ul>
         </nav>
 
-        <div>
-            <h1>Pasirinkite specialistą ir įrašykite savo numerį,<br> kurį gavote registracijos metu</h1>
-            <select name="specialistas">
-                <option value="Kardiologas">Kardiologas</option>
-                <option value="Šeimos gydytojas">Šeimos gydytojas</option>
-                <option value="Dermatologas">Dermatologas</option>
-            </select>
-            <input id="userInput" type="text" placeholder="Įveskite numerį">
-            <button>Ieškoti</button>
+        <div class="container">
+            <div class="search">
+                <h1>Pasirinkite specialistą ir įrašykite savo numerį,<br> kurį gavote registracijos metu</h1>
+                <select name="specialistas">
+                    <option value="Kardiologas">Kardiologas</option>
+                    <option value="Šeimos gydytojas">Šeimos gydytojas</option>
+                    <option value="Dermatologas">Dermatologas</option>
+                </select>
+                <input id="userInput" type="text" placeholder="Įveskite numerį">
+                <button>Ieškoti</button>
+            </div>
         </div>
 
         <script src="../../JS/script-lankytojas.js"></script>
