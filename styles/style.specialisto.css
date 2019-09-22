@@ -24,8 +24,31 @@ body{
 #list li{
     display:flex;
     justify-content: space-between;
+    align-items: center;
 }
 
 #list span{
     color:green;
+}
+
+#list span{
+    background-color: orangered;
+    padding: 5px 10px;
+    color:wheat;
+    border-radius: 50px;
+}
+
+button{
+    background-color: yellowgreen;
+    padding: 5px 30px;
+    border:solid 1px black;
+    border-radius: 50px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+button:hover{
+    background-color: green;
+    transition: 0.3s all;
+    color: wheat;
 }
