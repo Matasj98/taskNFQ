@@ -18,7 +18,7 @@ String.prototype.toHHMMSS = function () {
 const timeRemaining = (klientai) =>{
     let time = 0;
     let count = 0;
-    klientai.map(klientas => {
+    klientai.filter(klientas => klientas.time > 0).map(klientas => {
         time += klientas.time;
         if(klientas.time > 0){
             count++;

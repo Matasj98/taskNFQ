@@ -40,3 +40,8 @@ button:hover{
     transition: 0.3s all;
     color: wheat;
 }
+
+#print{
+    display: flex;
+    flex-direction: column;
+}

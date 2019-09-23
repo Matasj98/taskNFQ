@@ -3,6 +3,7 @@ const filter = document.querySelectorAll("input")
 
 const obj = JSON.parse(window.localStorage.getItem('users'));
 
+//laiko sekimas ir saugijimas localstorage
 const trackTime = () =>{
     let start = new Date();
     let oldTime = new Date(window.localStorage.getItem('time'))
@@ -12,6 +13,7 @@ const trackTime = () =>{
     return end
 }
 
+//funckija gauti tikslu suprantama laika HH MM SS formatu
 String.prototype.toHHMMSS = function () {
     var sec_num = parseInt(this, 10);
     var hours   = Math.floor(sec_num / 3600);
@@ -24,6 +26,7 @@ String.prototype.toHHMMSS = function () {
     return hours + ':' + minutes + ':' + seconds;
 }
 
+//atspaudinami duomenys
 const printSpecialistas = (value) =>{
 
     ul.innerHTML = "";
@@ -33,11 +36,13 @@ const printSpecialistas = (value) =>{
         sort.sort((a, b) => a.nr - b.nr)
         sort.sort((a,b)=> a.status - b.status)
         if(value === data.specialistas || value === "Visi"){
+            //Atspaudinamas specialisto pavadinimas
             let h1 = document.createElement("h1")
             h1.appendChild(document.createTextNode(data.specialistas))
             ul.appendChild(h1)
+            //atspausdinami specialisto klientai
             sort.map(klientas => {
-            
+                
                 let li = document.createElement("li")
                 li.appendChild(document.createTextNode("Numeris eilėje: "+klientas.nr+ ". Vardas: " + klientas.name))
                 ul.appendChild(li)
@@ -78,7 +83,7 @@ const printSpecialistas = (value) =>{
                     button.onclick = aptarnavimas;
                 }else{
                     let span = document.createElement("span");
-                    span.appendChild(document.createTextNode("Aptarnautas per " + (JSON.stringify(klientas.time/1000).toHHMMSS())));
+                    span.appendChild(document.createTextNode("Aptarnautas per " + (isNaN(klientas.time) ? "-" : (JSON.stringify(klientas.time/1000).toHHMMSS()))));
                     li.appendChild(span);
                 }
         
@@ -88,6 +93,7 @@ const printSpecialistas = (value) =>{
     })
 }
 
+//sekami pasikeitimai
 for(let i = 0; i < filter.length; i++){
     filter[i].addEventListener("change", () => printSpecialistas(filter[i].value))
 }

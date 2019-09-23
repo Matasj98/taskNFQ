@@ -40,7 +40,40 @@ const search = () =>{
         //kad suzinotume kiek reikia laukti klientui priklausomai nuo jo numerio eileje.
         time =(Math.round(time/1000)/count)*klientoNrCheck;
         let a = 0; //skaicius kuris atims po 5 sekundes is laiko, 5s prisikiriamos veliau
-    
+        
+        // atspausdinamas sekmingas pasalinimas
+        const success = () =>{
+            let h4 = document.createElement("h4");
+            h4.appendChild(document.createTextNode("Sėkmingai pašalintas"));
+            print.appendChild(h4);
+        }
+
+        //atsaukimas klientas, surandamas, kuris klientas
+        const cancel = () =>{
+            obj.map(data=>{
+                data.klientai.map(klientas => {
+                    if(data.specialistas === specialistas.value && klientas.nr === klientoNrCheck){
+                        klientas.status = true;
+                        klientas.time = "-";
+                        klientas.nr = "-";
+                        window.localStorage.setItem('users', JSON.stringify(obj));
+                        clearInterval(interval)
+                    }
+                })
+            })
+
+            success();
+        }
+        //sukuriamas mygtukas atųaukti apsilankyma
+        const createButton = () =>{
+            let buttonCancel = document.createElement("button");
+            buttonCancel.appendChild(document.createTextNode("Atšaukti apsilankymą"));
+            print.appendChild(buttonCancel);
+
+            buttonCancel.onclick = cancel;
+        }
+
+        //atspausdinamas atsakymas 
         const printAnswer = () =>{
             time = time - a;
             
@@ -63,13 +96,16 @@ const search = () =>{
                 clearInterval(interval)
             }else{
                 print.innerHTML = answer + `Kiek liko laukti: ~${JSON.stringify(time).toHHMMSS()}`
+                createButton();
             }
 
             a=5
         }
 
         if(isNaN(time)){
-            print.innerHTML = answer + "Kiek liko laukti: nepavyko nustatyti"
+            print.innerHTML = answer + "Kiek liko laukti: nepavyko nustatyti";
+            createButton();
+            
         }else{
             printAnswer()
             interval = setInterval(printAnswer,5000)
