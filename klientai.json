@@ -23,6 +23,28 @@
                 "status" : false,
                 "time": 0
             }
+            ,
+            {   
+                "nr": 4,
+                "uniqueNr": 4,
+                "name" : "Albinas",
+                "status" : false,
+                "time": 0
+            },
+            {   
+                "nr": 5,
+                "uniqueNr": 5,
+                "name" : "Gediminas",
+                "status" : false,
+                "time": 0
+            },
+            {   
+                "nr": 6,
+                "uniqueNr": 6,
+                "name" : "Edita",
+                "status" : false,
+                "time": 0
+            }
         ]
     },
     {
@@ -93,6 +115,27 @@
                 "nr": 3,
                 "uniqueNr": 3,
                 "name" : "Tautvydas",
+                "status" : false,
+                "time": 0
+            },
+            {   
+                "nr": 4,
+                "uniqueNr": 4,
+                "name" : "Rita",
+                "status" : false,
+                "time": 0
+            },
+            {   
+                "nr": 5,
+                "uniqueNr": 5,
+                "name" : "Mantas",
+                "status" : false,
+                "time": 0
+            },
+            {   
+                "nr": 6,
+                "uniqueNr": 6,
+                "name" : "Airida",
                 "status" : false,
                 "time": 0
             }
